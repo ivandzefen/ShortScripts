@@ -3,10 +3,9 @@ import sys
 ''' sshpy
     python
     usage : python3 sshpy.py 'hostname' 'username' 'password'(optional) 'port(optional)'''
-def main() :
+def main(args) :
     client=paramiko.SSHClient()
     client.load_system_host_keys()
-    args=sys.argv[1:]
     connect_info={'hostname':None,
                   'username':None,
                   'password':None,
@@ -45,4 +44,5 @@ def main() :
 
 
 if __name__=='__main__' :
-    main()
+    args=sys.argv[1:]
+    main(args)
